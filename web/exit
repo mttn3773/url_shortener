@@ -1,0 +1,17 @@
+[33mcommit c0666bd19c652d147127570ade7f2e75ba7aa07d[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31murl_shortener/master[m[33m)[m
+Author: mttn373 <mttn3773@gmail.com>
+Date:   Tue Feb 16 07:18:20 2021 +0400
+
+    final
+
+[33mcommit fad10ccdae67e66ce14a2f79c64afbc2a00cdcbe[m
+Author: mttn373 <mttn3773@gmail.com>
+Date:   Tue Feb 16 07:18:06 2021 +0400
+
+    123
+
+[33mcommit a37014bbd9df475c608d31c4d7cc22766b8bc57f[m
+Author: mttn373 <mttn3773@gmail.com>
+Date:   Sat Jan 16 14:52:31 2021 +0400
+
+    Initialize project using Create React App
