@@ -14,7 +14,7 @@ import cookieParser from "cookie-parser";
   try {
     await mongoose.connect(config.mongo.uri!, config.mongo.settings);
     const RedisStore = redisStore(session);
-    const redis = new Redis();
+    const redis = new Redis(process.env.REDIS_URL);
     const app = express();
     app.use(cors());
     app.use(json());
@@ -32,8 +32,6 @@ import cookieParser from "cookie-parser";
         resave: false,
         store: new RedisStore({
           client: redis,
-          host: process.env.HOST || "localhost",
-          port: 6379,
           disableTouch: true,
         }),
       })
