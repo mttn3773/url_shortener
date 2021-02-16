@@ -29,7 +29,7 @@ const cookie_parser_1 = __importDefault(require("cookie-parser"));
         yield mongoose_1.default.connect(config_1.default.mongo.uri, config_1.default.mongo.settings);
         const RedisStore = connect_redis_1.default(express_session_1.default);
         console.log(process.env.REDIS_TLS_URL);
-        const redis = new ioredis_1.default(process.env.REDIS_URL);
+        const redis = new ioredis_1.default(process.env.REDIS_TLS_URL);
         const app = express_1.default();
         app.use(cors_1.default());
         app.use(body_parser_1.json());
