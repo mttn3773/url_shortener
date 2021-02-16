@@ -14,6 +14,8 @@ import cookieParser from "cookie-parser";
   try {
     await mongoose.connect(config.mongo.uri!, config.mongo.settings);
     const RedisStore = redisStore(session);
+    console.log(process.env.REDIS_URL);
+
     const redis = new Redis(process.env.REDIS_URL);
     const app = express();
     app.use(cors());
