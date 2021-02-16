@@ -4,17 +4,14 @@ dotenv.config({ path: "./.env" });
 
 const PORT = process.env.PORT;
 
-const BASE_URL =
-  process.env.BASE_URL || "https://url-shortener0013.herokuapp.com/";
+const BASE_URL = process.env.BASE_URL;
 
 const SERVER = {
   port: PORT,
   baseUrl: BASE_URL,
 };
 
-const MONGO_URI =
-  process.env.MONGO_URI ||
-  "mongodb+srv://user:m270503n@cluster0.7f0u9.mongodb.net/user?retryWrites=true&w=majority";
+const MONGO_URI = process.env.MONGO_URI;
 
 const MONGO = {
   uri: MONGO_URI,
