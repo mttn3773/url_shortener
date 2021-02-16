@@ -32,7 +32,7 @@ import cookieParser from "cookie-parser";
         resave: false,
         store: new RedisStore({
           client: redis,
-          host: "localhost",
+          host: process.env.HOST || "localhost",
           port: 6379,
           disableTouch: true,
         }),
