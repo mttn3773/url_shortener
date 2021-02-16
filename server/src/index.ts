@@ -10,6 +10,8 @@ import linkRouter from "./routes/link.routes";
 import redirectRouter from "./routes/redirect.routes";
 import config from "./config/config";
 import cookieParser from "cookie-parser";
+
+(process as any).env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 (async () => {
   try {
     await mongoose.connect(config.mongo.uri!, config.mongo.settings);

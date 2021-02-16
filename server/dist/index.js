@@ -24,6 +24,7 @@ const link_routes_1 = __importDefault(require("./routes/link.routes"));
 const redirect_routes_1 = __importDefault(require("./routes/redirect.routes"));
 const config_1 = __importDefault(require("./config/config"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
+process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 (() => __awaiter(void 0, void 0, void 0, function* () {
     try {
         yield mongoose_1.default.connect(config_1.default.mongo.uri, config_1.default.mongo.settings);
