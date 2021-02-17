@@ -11,7 +11,7 @@ import { check } from "express-validator";
 
 const router = Router();
 
-router.get("/", authMiddleware, findAllLinks);
+router.get("/", findAllLinks);
 
 router.post(
   "/generate",
