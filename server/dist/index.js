@@ -32,7 +32,7 @@ process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
         console.log(process.env.REDIS_TLS_URL);
         const redis = new ioredis_1.default(process.env.REDIS_TLS_URL);
         const app = express_1.default();
-        app.use(cors_1.default());
+        app.use(cors_1.default({ origin: true, credentials: true }));
         app.use(body_parser_1.json());
         app.use(body_parser_1.urlencoded({ extended: false }));
         app.use(cookie_parser_1.default());
