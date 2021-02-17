@@ -5,4 +5,6 @@ const router = Router();
 
 router.get("/:code", handleRedirect);
 
+//
+
 export default router;
