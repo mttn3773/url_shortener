@@ -20,7 +20,7 @@ import cookieParser from "cookie-parser";
 
     const redis = new Redis(process.env.REDIS_TLS_URL);
     const app = express();
-    app.use(cors());
+    app.use(cors({ origin: true, credentials: true }));
     app.use(json());
     app.use(urlencoded({ extended: false }));
     app.use(cookieParser());
