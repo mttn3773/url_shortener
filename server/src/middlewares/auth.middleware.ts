@@ -12,6 +12,7 @@ export const authMiddleware = (
         .status(401)
         .send({
           error: {
+            msg: "Not authenticated",
             param: "authentication",
           } as IError,
         })
