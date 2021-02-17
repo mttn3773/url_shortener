@@ -7,16 +7,16 @@ export const authMiddleware = (
 ) => {
   try {
     const user = req.session.user;
-    if (!user) return next();
-    return res
-      .status(401)
-      .send({
-        error: {
-          msg: "Not authenticated",
-          param: "authentication",
-        } as IError,
-      })
-      .end();
+    if (!user)
+      return res
+        .status(401)
+        .send({
+          error: {
+            msg: "Not authenticated",
+            param: "authentication",
+          } as IError,
+        })
+        .end();
     return next();
   } catch (e) {
     return res
