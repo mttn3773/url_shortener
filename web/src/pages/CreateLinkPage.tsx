@@ -17,7 +17,7 @@ export const CreateLinkPage: React.FC<CreateLinkPageProps> = ({}) => {
       initialValues={{ to: "" }}
       onSubmit={async (values) => {
         const res = await request({
-          url: "/api/link/generate",
+          url: "https://url-shortener0013.herokuapp.com/api/link/generate",
           method: "POST",
           headers: {},
           body: values,

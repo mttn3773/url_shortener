@@ -9,7 +9,7 @@ interface LinksListProps {
 }
 
 export const LinksList: React.FC<LinksListProps> = ({ links }) => {
-  if (!links.length) {
+  if (!links || !links.length) {
     return <p> No links yet</p>;
   }
 

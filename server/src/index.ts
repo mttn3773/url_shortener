@@ -10,6 +10,7 @@ import linkRouter from "./routes/link.routes";
 import redirectRouter from "./routes/redirect.routes";
 import config from "./config/config";
 import cookieParser from "cookie-parser";
+import path from "path";
 
 (process as any).env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 (async () => {
@@ -43,6 +44,12 @@ import cookieParser from "cookie-parser";
     app.use("/api/link", linkRouter);
     app.use("/api/user", authRouter);
     app.use("/t/", redirectRouter);
+    if (process.env.NODE_ENV === "production") {
+      app.use("/", express.static(path.join(__dirname, "web", "build")));
+      app.get("*", (_req, res) => {
+        res.sendFile(path.resolve(__dirname, "web", "build", "index.html"));
+      });
+    }
     app.listen(config.server.port, () => {
       console.log(`App is running on port ${config.server.port}`);
     });

@@ -24,6 +24,7 @@ const link_routes_1 = __importDefault(require("./routes/link.routes"));
 const redirect_routes_1 = __importDefault(require("./routes/redirect.routes"));
 const config_1 = __importDefault(require("./config/config"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
+const path_1 = __importDefault(require("path"));
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 (() => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -53,6 +54,12 @@ process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
         app.use("/api/link", link_routes_1.default);
         app.use("/api/user", auth_routes_1.default);
         app.use("/t/", redirect_routes_1.default);
+        if (process.env.NODE_ENV === "production") {
+            app.use("/", express_1.default.static(path_1.default.join(__dirname, "web", "build")));
+            app.get("*", (_req, res) => {
+                res.sendFile(path_1.default.resolve(__dirname, "web", "build", "index.html"));
+            });
+        }
         app.listen(config_1.default.server.port, () => {
             console.log(`App is running on port ${config_1.default.server.port}`);
         });

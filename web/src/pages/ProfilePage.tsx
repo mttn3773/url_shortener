@@ -9,7 +9,6 @@ import { IRootState } from "../interface/rootState.interface";
 interface ProfilePageProps {}
 
 export const ProfilePage: React.FC<ProfilePageProps> = ({}) => {
-  console.log(config.server.serverUrl);
   const { request, dispatchError } = useApi();
   const user = useSelector((state: IRootState) => state.authReducer.user);
   const loading = useSelector(
@@ -18,7 +17,7 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({}) => {
   const [links, setLinks] = useState<ILink[]>([]);
   useEffect(() => {
     request({
-      url: "/api/link",
+      url: "https://url-shortener0013.herokuapp.com/api/link",
       method: "GET",
       headers: {},
     }).then(
