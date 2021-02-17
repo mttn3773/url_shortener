@@ -10,7 +10,6 @@ import { Router } from "express";
 import { check } from "express-validator";
 
 const router = Router();
-// REFRESH
 router.get("/", findAllLinks);
 
 router.post(
